@@ -1,0 +1,26 @@
+{
+  "name": "grunt-ga-replace",
+  "version": "1.0.0",
+  "description": "Replaces Google Analytics property ID's",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hal313/grunt-ga-replace.git"
+  },
+  "keywords": [
+    "GA",
+    "Google",
+    "Analytics"
+  ],
+  "author": "John R. Ghidiu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hal313/grunt-ga-replace/issues"
+  },
+  "homepage": "https://github.com/hal313/grunt-ga-replace#readme",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0"
+  }
+}
