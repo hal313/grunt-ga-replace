@@ -1,6 +1,6 @@
 {
   "name": "grunt-ga-replace",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Replaces Google Analytics property ID's",
   "repository": {
     "type": "git",
