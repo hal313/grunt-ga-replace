@@ -27,16 +27,21 @@ module.exports = function(grunt) {
 
         // Set the patterns (if none are passed in)
         if (!options.from) {
+            grunt.log.debug('no options.from specified');
             if (TYPES.auto === options.type) {
+                grunt.log.debug('options.type is "auto"; setting options.from');
                 // Get the keys from the patterns array
                 options.from = Object.values(patterns);
             } else {
+                grunt.log.debug('options.type is "' + options.type + '"; setting options.from');
                 // Be sure to create as an array (of 1)
                 options.from = [patterns[options.type]];
             }
         }
+        grunt.log.debug('options.from', options.from);
 
         // Iterate over all specified file groups.
+        grunt.log.debug('this.files', this.files);
         this.files.forEach(function(file) {
 
             // Concat specified files.
@@ -49,21 +54,24 @@ module.exports = function(grunt) {
                     return true;
                 }
             })
-
                 .map(function(filePath) {
+                    var content;
+
+                    grunt.log.debug('processing "' + filePath + '"');
+
                     // Read file source.
-                    var content = grunt.file.read(filePath);
+                    content = grunt.file.read(filePath);
 
                     // Output some debugging
                     grunt.verbose.ok('file', filePath);
 
                     // Convert options.from to an array (if it is not an array)
                     if ("array" !== grunt.util.kindOf(options.from)) {
-                        grunt.verbose.ok('"options.from" is not an array; converting', filePath);
+                        grunt.log.debug('"options.from" is not an array; converting', filePath);
                         options.from = [options.from];
                     }
 
-                    grunt.verbose.ok('options.from', options.from);
+                    grunt.log.debug('options.from', options.from);
 
                     // Filter based on feature switch
                     options.from.forEach(function(pattern) {
@@ -71,6 +79,7 @@ module.exports = function(grunt) {
                     });
 
                     // Write the file
+                    grunt.log.debug('writing "' + file.dest + '"');
                     grunt.file.write(file.dest, content);
 
                     // Print a success message.
