@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hal313/grunt-ga-replace.svg?branch=master)](https://travis-ci.org/hal313/grunt-ga-replace)
+
 # grunt-ga-replace
 > Replaces Google Analytics property ID's.
 
