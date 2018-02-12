@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 
                     // Convert options.from to an array (if it is not an array)
                     if ("array" !== grunt.util.kindOf(options.from)) {
-                        grunt.log.debug('"options.from" is not an array; converting', filePath);
+                        grunt.log.debug('"options.from" is not an array; converting');
                         options.from = [options.from];
                     }
 
